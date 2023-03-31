@@ -12,14 +12,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/jobtitles")
 public class JobTitleController {
+
     @Autowired
     private JobTitleService jobtitleservice;
-
-    public JobTitleController(JobTitleService jobtitleservice) {
-        super();
-        this.jobtitleservice = jobtitleservice;
-    }
-
 
     @GetMapping("/getall")
     public List<JobTitle> getAll() {

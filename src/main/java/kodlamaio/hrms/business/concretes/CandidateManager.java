@@ -12,11 +12,6 @@ import java.util.List;
 public class CandidateManager implements CandidateService {
 	@Autowired
 	private CandidateDataAccess candidatedataaccess;
-	public CandidateManager(CandidateDataAccess candidatedataaccess) {
-		super();
-		this.candidatedataaccess = candidatedataaccess;
-	}
-
 
 	@Override
 	public List<Candidate> getAll() {

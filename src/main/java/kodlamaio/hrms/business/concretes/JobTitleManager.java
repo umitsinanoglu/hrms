@@ -12,11 +12,6 @@ import java.util.List;
 public class JobTitleManager implements JobTitleService {
 	@Autowired
 	private JobTitleDataAccess jobtitledataaccess;
-	public JobTitleManager(JobTitleDataAccess jobtitledataaccess) {
-		super();
-		this.jobtitledataaccess = jobtitledataaccess;
-	}
-
 
 	@Override
 	public List<JobTitle> getAll() {

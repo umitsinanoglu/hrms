@@ -1,5 +1,6 @@
 package kodlamaio.hrms.api.controllers;
 
+import kodlamaio.hrms.business.abstracts.CandidateService;
 import kodlamaio.hrms.business.concretes.CandidateManager;
 import kodlamaio.hrms.entities.concretes.Candidate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +14,11 @@ import java.util.List;
 @RequestMapping("/api/candidates")
 public class CandidatesController {
     @Autowired
-    private CandidateManager candidateManager;
-
+    private CandidateService candidateService;
 
     @GetMapping("/getall")
     public List<Candidate> getAll() {
-        return this.candidateManager.getAll();
+        return this.candidateService.getAll();
     }
 
 }
