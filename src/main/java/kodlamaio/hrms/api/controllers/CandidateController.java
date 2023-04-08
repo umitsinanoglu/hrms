@@ -1,29 +1,30 @@
 package kodlamaio.hrms.api.controllers;
 
 import kodlamaio.hrms.business.abstracts.CandidateService;
-import kodlamaio.hrms.business.concretes.CandidateManager;
+import kodlamaio.hrms.core.utilities.results.DataResult;
+import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.entities.concretes.Candidate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/candidates")
-public class CandidatesController {
+public class CandidateController {
+
     @Autowired
     private CandidateService candidateService;
 
     @GetMapping("/getall")
-    public List<Candidate> getAll() {
+    public DataResult<List<Candidate>> getAll() {
+
         return this.candidateService.getAll();
     }
 
+    @PostMapping("/addCandidate")
+    public Result add(@RequestBody Candidate candidate) throws Exception {
+
+        return this.candidateService.add(candidate);
+    }
 }
-
-
-
-
-

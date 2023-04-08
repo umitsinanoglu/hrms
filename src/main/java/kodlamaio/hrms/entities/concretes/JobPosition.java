@@ -9,34 +9,23 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "candidates")
+@Table(name = "job_titles")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Candidate extends User {
+public class JobPosition {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotNull
+    @NotBlank
     @Column(name = "id")
     private int id;
 
-    @NotBlank
     @NotNull
-    @Column(name = "first_name")
-    private String firstName;
-
     @NotBlank
-    @NotNull
-    @Column(name = "last_name")
-    private String lastName;
-
-    @NotBlank
-    @NotNull
-    @Column(name = "identity_number")
-    private String identityNumber;
-
-    @NotBlank
-    @NotNull
-    @Column(name = "birth_year")
-    private int birthYear;
+    @Column(name = "title")
+    private String title;
 
 }
+
+
