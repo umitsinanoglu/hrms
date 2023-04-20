@@ -7,17 +7,20 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Entity
-@Table(name = "job_titles")
+@Table(name = "jobs")
+@Inheritance(strategy = InheritanceType.JOINED)
 @NoArgsConstructor
 @AllArgsConstructor
-public class JobPosition {
+public class Job {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotNull
     @NotBlank
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
@@ -25,6 +28,9 @@ public class JobPosition {
     @NotBlank
     @Column(name = "title")
     private String title;
+
+    @OneToMany(mappedBy = "job")
+    private List<JobPostings> jobPostings;
 
 }
 
