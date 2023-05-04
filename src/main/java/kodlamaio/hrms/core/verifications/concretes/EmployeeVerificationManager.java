@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmployeeVerificationManager implements EmployeeVerificationService {
 
-	@Override
-	public Result verifyAccount() {
-		return new SuccessResult("Account is verified by HRMS.");
-	}
+    @Override
+    public Result verifyAccount() {
+        return new SuccessResult("Account is verified by HRMS.");
+    }
 }

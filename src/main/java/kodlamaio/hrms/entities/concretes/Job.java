@@ -26,11 +26,8 @@ public class Job {
 
     @NotNull
     @NotBlank
-    @Column(name = "title")
-    private String title;
-
-    @OneToMany(mappedBy = "job")
-    private List<JobPostings> jobPostings;
+    @Column(name = "job_title")
+    private String jobTitle;
 
 }
 

@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmailVarificationManager implements EmailVerificationService {
 
-	@Override
-	public Result verifyEmail(String email) {
-		// TODO Auto-generated method stub
-		return new SuccessResult("Please verify your account. We sent the e-mail to your e-mail address: " + email);
-	}
+    @Override
+    public Result verifyEmail(String email) {
+        // TODO Auto-generated method stub
+        return new SuccessResult("Please verify your account. We sent the e-mail to your e-mail address: " + email);
+    }
 
 }

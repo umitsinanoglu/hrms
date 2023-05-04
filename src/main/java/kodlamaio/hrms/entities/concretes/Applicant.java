@@ -7,39 +7,24 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @Entity
-@Table(name = "employers")
+@Table(name = "applicants")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Employer extends User {
+public class Applicant extends User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "employer_id")
-    private int employerId;
+    @Column(name = "applicant_id")
+    private int id;
 
-    @NotBlank
-    @NotNull
-    @Column(name = "company_name")
-    private String companyName;
-
-    @NotBlank
-    @NotNull
-    @Column(name = "web_address")
-    private String webAddress;
-
-    @NotBlank
-    @NotNull
-    @Column(name = "phone_number")
-    private String phoneNumber;
+    @Column(name = "resume")
+    private String resume;
 
     @NotBlank
     @NotNull
     @Column(name = "is_approved")
     private boolean isApproved;
-
 
 }

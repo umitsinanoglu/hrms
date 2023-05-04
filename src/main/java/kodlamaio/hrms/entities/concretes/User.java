@@ -18,7 +18,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "user_id")
     private int id;
 
     @Column(name = "email")
@@ -31,6 +31,32 @@ public class User {
     @NotBlank
     @NotNull
     private String password;
+
+    @NotBlank
+    @NotNull
+    @Column(name = "birth_year")
+    private int birthYear;
+
+    @NotBlank
+    @NotNull
+    @Column(name = "first_name")
+    private String firstName;
+
+    @NotBlank
+    @NotNull
+    @Column(name = "last_name")
+    private String lastName;
+
+    @NotBlank
+    @NotNull
+    @Column(name = "identity_number")
+    private String identityNumber;
+
+    @NotBlank
+    @NotNull
+    @Column(name = "phone_number")
+    private String phoneNumber;
+
 
 
 }
