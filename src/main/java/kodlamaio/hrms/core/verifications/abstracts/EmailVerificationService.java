@@ -4,5 +4,5 @@ import kodlamaio.hrms.core.utilities.results.Result;
 
 public interface EmailVerificationService {
 
-	Result verifyEmail(String email);
+    Result verifyEmail(String email);
 }

@@ -7,36 +7,28 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Entity
-@Table(name = "candidates")
+@Table(name = "jobs")
+@Inheritance(strategy = InheritanceType.JOINED)
 @NoArgsConstructor
 @AllArgsConstructor
-public class Candidate extends User {
+public class Job {
 
     @Id
+    @NotNull
+    @NotBlank
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @NotBlank
     @NotNull
-    @Column(name = "first_name")
-    private String firstName;
-
     @NotBlank
-    @NotNull
-    @Column(name = "last_name")
-    private String lastName;
-
-    @NotBlank
-    @NotNull
-    @Column(name = "identity_number")
-    private String identityNumber;
-
-    @NotBlank
-    @NotNull
-    @Column(name = "birth_year")
-    private int birthYear;
+    @Column(name = "job_title")
+    private String jobTitle;
 
 }
+
+

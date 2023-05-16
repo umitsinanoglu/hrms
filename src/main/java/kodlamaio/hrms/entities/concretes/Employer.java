@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Entity
 @Table(name = "employers")
@@ -16,8 +18,8 @@ public class Employer extends User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
+    @Column(name = "employer_id")
+    private int employerId;
 
     @NotBlank
     @NotNull
@@ -33,5 +35,11 @@ public class Employer extends User {
     @NotNull
     @Column(name = "phone_number")
     private String phoneNumber;
+
+    @NotBlank
+    @NotNull
+    @Column(name = "is_approved")
+    private boolean isApproved;
+
 
 }

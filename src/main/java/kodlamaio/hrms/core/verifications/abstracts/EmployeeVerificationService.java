@@ -5,5 +5,5 @@ import kodlamaio.hrms.core.utilities.results.Result;
 
 public interface EmployeeVerificationService {
 
-		Result verifyAccount();
+    Result verifyAccount();
 }

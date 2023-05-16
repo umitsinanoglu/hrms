@@ -1,7 +1,7 @@
 package kodlamaio.hrms.core.adapters.concretes;
 
 import kodlamaio.hrms.core.adapters.abstracts.MernisService;
-import kodlamaio.hrms.entities.concretes.Candidate;
+import kodlamaio.hrms.entities.concretes.Applicant;
 import org.springframework.stereotype.Service;
 import tr.gov.nvi.tckimlik.WS.SHAKPSPublicSoap;
 
@@ -17,12 +17,12 @@ public class MernisAdapter implements MernisService {
      */
 
     @Override
-    public boolean checkPerson(Candidate candidate) throws Exception {
+    public boolean checkPerson(Applicant applicant) throws Exception {
 
         SHAKPSPublicSoap kpsPublicSoapProxy = new SHAKPSPublicSoap();
 
-        return kpsPublicSoapProxy.TCKimlikNoDogrula(Long.parseLong(candidate.getIdentityNumber()),
-                candidate.getFirstName().toUpperCase(), candidate.getLastName().toUpperCase(),
-                candidate.getBirthYear());
+        return kpsPublicSoapProxy.TCKimlikNoDogrula(Long.parseLong(applicant.getIdentityNumber()),
+                applicant.getFirstName().toUpperCase(), applicant.getLastName().toUpperCase(),
+                applicant.getBirthYear());
     }
 }
