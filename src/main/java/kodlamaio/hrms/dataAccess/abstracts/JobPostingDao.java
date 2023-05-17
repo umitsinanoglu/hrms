@@ -6,13 +6,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface JobPostingDao extends JpaRepository<JobPosting, Integer> {
+
     JobPosting findById(int id);
 
     List<JobPosting> findByIsActive(boolean isActive);
 
-    List<JobPosting> findByIsActiveOrderByEndDateAsc(boolean isActive);
+    List<JobPosting> findByIsActiveOrderByEndDateAsc(boolean isOpen);
 
-    List<JobPosting> findByEmployerCompanyNameAndIsActive(String employerName, boolean isActive);
-
+    List<JobPosting> findByEmployerCompanyNameAndIsActive(String employerCompanyName, boolean isActive);
 
 }
